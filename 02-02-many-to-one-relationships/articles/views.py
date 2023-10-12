@@ -30,7 +30,9 @@ def create(request):
     if request.method == 'POST':
         form = ArticleForm(request.POST)
         if form.is_valid():
-            article = form.save()
+            article = form.save(commit=False)
+            article.user = request.user
+            form.save()
             return redirect('articles:detail', article.pk)
     else:
         form = ArticleForm()
