@@ -34,7 +34,7 @@ doctor1.patient_set.all()
 patient2.doctors.all()
 patient1.doctors.all()
 
-doctor1.patient_set.remove(patient1)
+doctor1.patient_set.remove(patient1)  # 의사가 예약을 취소 (괄호 안에는 관계를 지울 대상)
 doctor1.patient_set.all()
 patient1.doctors.all()
 
